@@ -1,8 +1,13 @@
-import React from 'react'
+import React from 'react';
 import "./navbar.css"
 
-const Navbar = () => {
+const Navbar = ({toggleCart}) => {
+  // const removeItemFromCart = (indexToRemove) => {
+  //   const updatedCart = cartElements.filter((_, index) => index !== indexToRemove);
+  //   // Update your state or cartElements array with the updatedCart
+  // };
   return (
+    <>
     <header>
     <nav>
       <ul>
@@ -10,9 +15,10 @@ const Navbar = () => {
         <li><a href="/store">Store</a></li>
         <li><a href="/about">About</a></li>
       </ul>
-      <button>Cart</button>
+      <button onClick={toggleCart}>Cart</button>
     </nav>
   </header>
+  </>
   )
 }
 
