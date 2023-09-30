@@ -43,7 +43,7 @@ const productsArr = [
     }
     
     ]
-const Main = () => {
+const Main = ({AddCart}) => {
   return (
     <>
     {productsArr.map((product)=>(
@@ -51,8 +51,8 @@ const Main = () => {
         <section className="product">
           <img src={product.imageUrl} alt="Product 1" />
           <h2>{product.title}</h2>
-          <p>{product.title}</p>
-          <button>Add to Cart</button>
+          <p>{product.price}</p>
+          <button onClick={()=>AddCart(1,product.title , product.price , product.imageUrl)}>Add to Cart</button>
         </section>
         </main>
     ))}

@@ -1,4 +1,4 @@
-import React from 'react'
+import React , {useState} from 'react'
 import "./cartitem.css"
 const cartElements = [
 
@@ -41,7 +41,7 @@ const cartElements = [
     ]
 
 
-const CartItem = ({onCloseCart}) => {
+const CartItem = ({onCloseCart , cartItems}) => {
   return (
     <div className="cart">
     <div className="cart-header">
@@ -51,7 +51,7 @@ const CartItem = ({onCloseCart}) => {
       </button>
     </div>
     <div className="cart-items">
-      {cartElements.map((item, index) => (
+      {cartItems.map((item, index) => (
         <div className="cart-item" key={index}>
           <img src={item.imageUrl} alt={item.title} />
           <div className="cart-item-details">
